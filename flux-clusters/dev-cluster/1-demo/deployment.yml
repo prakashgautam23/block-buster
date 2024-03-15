@@ -5,10 +5,10 @@ metadata:
     app: block-buster
     version: 7.1.0
     env: dev
-  name: block-buster-deployment
+  name: block-buster
   namespace: 1-demo
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: block-buster
@@ -28,11 +28,11 @@ spec:
           imagePullPolicy: Always
           resources:
             requests:
-              memory: "32Mi"
-              cpu: "125m"
+              memory: "10Mi"
+              cpu: "10m"
             limits:
               memory: "64Mi"
-              cpu: "250m"
+              cpu: "20m"
           env:
             - name: MY_POD_NAME
               valueFrom:
